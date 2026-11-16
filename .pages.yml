@@ -1,0 +1,31 @@
+media:
+  input: images
+  output: /images
+
+content:
+  - name: posts
+    label: Y&R Blog Posts
+    path: posts
+    type: collection
+    filename: "{primary}.json"
+    view:
+      fields: [ title, date ]
+    fields:
+      - name: title
+        label: Article Headline
+        type: string
+        required: true
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: image
+        label: Featured Image
+        type: image
+      - name: summary
+        label: Short Summary (For Home Page)
+        type: text
+      - name: body
+        label: Full Story Article
+        type: rich-text
+        required: true
