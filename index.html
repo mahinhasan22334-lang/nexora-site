@@ -1,40 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exclusive Fan Rewards | Nexora Digital Zone</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-    .card { background: #1e293b; max-width: 460px; width: 100%; border-radius: 16px; padding: 32px 24px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid #334155; }
-    .badge { display: inline-block; background: #dc2626; color: #fff; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 20px; letter-spacing: 0.5px; margin-bottom: 16px; text-transform: uppercase; }
-    h1 { font-size: 24px; line-height: 1.3; margin-bottom: 12px; color: #ffffff; }
-    p { font-size: 15px; color: #cbd5e1; line-height: 1.5; margin-bottom: 24px; }
-    .highlight { color: #fbbf24; font-weight: 700; }
-    .btn { display: block; width: 100%; background: #16a34a; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: 700; padding: 16px; border-radius: 10px; transition: background 0.2s; box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4); }
-    .btn:hover { background: #15803d; }
-    .steps { text-align: left; background: #0f172a; padding: 16px; border-radius: 10px; margin-top: 24px; font-size: 13px; color: #94a3b8; }
-    .steps div { margin-bottom: 8px; }
-    .steps div:last-child { margin-bottom: 0; }
-    .footer { margin-top: 20px; font-size: 11px; color: #64748b; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Fan Rewards - Official USA Giveaway</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background: linear-gradient(135deg, #090d16 0%, #162032 100%); color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 16px; }
+        
+        /* Responsive Banner Wrapper */
+        .ad-banner-wrap { width: 100%; max-width: 728px; margin: 0 auto 18px auto; text-align: center; overflow-x: auto; display: flex; justify-content: center; }
+
+        .container { background: #131c2e; border: 1px solid #263552; border-radius: 18px; max-width: 460px; width: 100%; padding: 28px 22px; text-align: center; box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.5); }
+        .badge { display: inline-block; background: rgba(34, 197, 94, 0.15); color: #4ade80; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 999px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 14px; border: 1px solid rgba(74, 222, 128, 0.3); }
+        h1 { font-size: 24px; font-weight: 800; line-height: 1.25; margin-bottom: 10px; color: #f8fafc; }
+        p.subtitle { font-size: 14px; color: #94a3b8; line-height: 1.5; margin-bottom: 20px; }
+        
+        /* Main CashApp Offer Box */
+        .main-offer { background: linear-gradient(145deg, #0f172a 0%, #17253b 100%); border: 1.5px solid #22c55e; border-radius: 14px; padding: 20px 16px; margin-bottom: 20px; position: relative; }
+        .popular-tag { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: #22c55e; color: #052e16; font-size: 11px; font-weight: 800; padding: 3px 12px; border-radius: 999px; text-transform: uppercase; }
+        .reward-amount { font-size: 34px; font-weight: 900; color: #4ade80; margin: 4px 0; }
+        .reward-desc { font-size: 13.5px; color: #e2e8f0; margin-bottom: 16px; }
+        .cta-btn { display: block; width: 100%; background: linear-gradient(90deg, #16a34a 0%, #22c55e 100%); color: #ffffff; text-decoration: none; font-size: 17px; font-weight: 700; padding: 15px; border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 10px 20px -3px rgba(34, 197, 94, 0.35); }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 25px -3px rgba(34, 197, 94, 0.5); }
+
+        /* Secondary Bonus Offers (Adsterra Smartlinks) */
+        .bonus-title { font-size: 12.5px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; }
+        .bonus-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        .bonus-item { display: flex; justify-content: space-between; align-items: center; background: #1a263e; border: 1px solid #2d3f63; padding: 12px 14px; border-radius: 10px; text-decoration: none; color: #f1f5f9; transition: background 0.2s, border-color 0.2s; }
+        .bonus-item:hover { background: #223252; border-color: #38bdf8; }
+        .bonus-left { text-align: left; }
+        .bonus-name { font-size: 14px; font-weight: 700; color: #ffffff; }
+        .bonus-sub { font-size: 12px; color: #94a3b8; }
+        .bonus-action { background: rgba(56, 189, 248, 0.15); color: #38bdf8; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.3); }
+
+        .steps { text-align: left; padding-top: 16px; border-top: 1px solid #263552; font-size: 13px; color: #94a3b8; }
+        .steps div { margin-bottom: 7px; display: flex; align-items: center; gap: 8px; }
+        .footer { margin-top: 16px; font-size: 11px; color: #64748b; line-height: 1.4; }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <span class="badge">🇺🇸 USA Fan Exclusive • Limited Spots</span>
-    <h1>Claim Your <span class="highlight">$100 Gift Card</span> Fan Appreciation Reward!</h1>
-    <p>Selected loyal soap opera fans can now claim a $100 Walmart or Streaming Gift Card today. Spots are limited for today's batch.</p>
-    
-    <a href="#" class="btn">CLAIM YOUR REWARD NOW →</a>
 
-    <div class="steps">
-      <div><strong>Step 1:</strong> Click the green button above.</div>
-      <div><strong>Step 2:</strong> Enter your valid US Email or Zip Code.</div>
-      <div><strong>Step 3:</strong> Confirm your entry to unlock your reward.</div>
+    <!-- Top 728x90 Banner Ad -->
+    <div class="ad-banner-wrap">
+        <script>
+          atOptions = {
+            'key' : '706dc13ec5468300f90fa501a5950881',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script src="https://bicea.org/22/706dc13ec5468300f90fa501a5950881"></script>
     </div>
 
-    <div class="footer">© 2026 Nexora Digital Zone • Independent Fan Rewards Portal</div>
-  </div>
+    <div class="container">
+        <div class="badge">● Official USA Fan Appreciation</div>
+        <h1>Claim Your Exclusive Digital Reward!</h1>
+        <p class="subtitle">Select your preferred reward package below and complete a quick 30-second verification to unlock instant access.</p>
+        
+        <!-- Primary CPAGrip Offer -->
+        <div class="main-offer">
+            <div class="popular-tag">★ Most Popular Today</div>
+            <div class="reward-amount">$1,000 CashApp</div>
+            <div class="reward-desc">Direct Digital Transfer • US Residents Only</div>
+            <a href="https://singingfiles.com/show.php?l=0&u=2455466&id=75220" target="_blank" rel="noopener noreferrer" class="cta-btn">Claim $1,000 Reward Now →</a>
+        </div>
+
+        <!-- Secondary Adsterra Smartlink Offers -->
+        <div class="bonus-title">Alternative Instant Fan Perks</div>
+        <div class="bonus-grid">
+            <a href="https://asiafilm.org/4/be8a505f260107bf50ed2d9ed61be6da" target="_blank" rel="noopener noreferrer" class="bonus-item">
+                <div class="bonus-left">
+                    <div class="bonus-name">🎁 $500 Amazon Shopping Voucher</div>
+                    <div class="bonus-sub">Instant digital code delivery</div>
+                </div>
+                <span class="bonus-action">Unlock →</span>
+            </a>
+
+            <a href="https://asiafilm.org/4/a600b5fee8ad6a37fcc674d388bec24e" target="_blank" rel="noopener noreferrer" class="bonus-item">
+                <div class="bonus-left">
+                    <div class="bonus-name">💳 $250 Visa Prepaid Reward Card</div>
+                    <div class="bonus-sub">Accepted everywhere online</div>
+                </div>
+                <span class="bonus-action">Unlock →</span>
+            </a>
+
+            <a href="https://asiafilm.org/4/a81cf4cc354ab34a22a5777fe7d719ff" target="_blank" rel="noopener noreferrer" class="bonus-item">
+                <div class="bonus-left">
+                    <div class="bonus-name">🎬 VIP Entertainment & Streaming Pass</div>
+                    <div class="bonus-sub">Free fan bonus access</div>
+                </div>
+                <span class="bonus-action">Unlock →</span>
+            </a>
+        </div>
+
+        <div class="steps">
+            <div>✅ <strong>Step 1:</strong> Choose any reward option above.</div>
+            <div>✅ <strong>Step 2:</strong> Enter your valid Email or US Zip Code.</div>
+            <div>✅ <strong>Step 3:</strong> Confirm entry to receive your reward.</div>
+        </div>
+
+        <div class="footer">
+            Limited daily spots available for US residents (18+).<br>
+            © 2026 Nexora Digital Zone. All rights reserved.
+        </div>
+    </div>
+
+    <!-- Adsterra Background / Social Bar / Popunder Scripts -->
+    <script data-cfasync="false" src="https://bicea.org/14/592d799ca820e1344664c340eb635b94"></script>
+    <script data-cfasync="false" src="https://afders.org/1/6a81dd32dc16f3fbcca8fcfe18d5893b"></script>
+
 </body>
 </html>
