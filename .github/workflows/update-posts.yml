@@ -1,0 +1,47 @@
+name: Auto Index Blog Posts
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'posts/*.json'
+      - '!posts/index.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate posts/index.json
+        run: |
+          node -e '
+            const fs = require("fs");
+            const path = require("path");
+            const dir = "posts";
+            const files = fs.readdirSync(dir).filter(f => f.endsWith(".json") && f !== "index.json");
+            const posts = files.map(f => {
+              const data = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
+              return {
+                slug: f.replace(/\.json$/, ""),
+                title: data.title || "",
+                date: data.date || "",
+                summary: data.summary || ""
+              };
+            });
+            posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+            fs.writeFileSync(path.join(dir, "index.json"), JSON.stringify(posts, null, 2));
+          '
+
+      - name: Commit updated index.json
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add posts/index.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update posts index"
+          git push
